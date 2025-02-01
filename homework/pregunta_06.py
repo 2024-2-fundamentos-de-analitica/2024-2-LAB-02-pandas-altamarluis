@@ -5,13 +5,9 @@ datos requeridos se encuentran en los archivos `tbl0.tsv`, `tbl1.tsv` y
 librerias de pandas para resolver las preguntas.
 """
 
+import pandas as pd
 
 def pregunta_06():
-    """
-    Retorne una lista con los valores unicos de la columna `c4` del archivo
-    `tbl1.csv` en mayusculas y ordenados alfabéticamente.
-
-    Rta/
-    ['A', 'B', 'C', 'D', 'E', 'F', 'G']
-
-    """
+    data_frame = pd.read_csv("files/input/tbl1.tsv", delimiter="\t")
+    unique_values = sorted(set(value.upper() for value in data_frame['c4'].values))
+    return unique_values
